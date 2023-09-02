@@ -1,4 +1,4 @@
-# Design_Patterns
+# Design Patterns
 Design Patterns Practice
 
 The main idea of this repo is to test the branch system of Git & Github.
