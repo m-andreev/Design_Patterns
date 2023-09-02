@@ -1,19 +1,18 @@
-# Singleton Method
+# Abstract Factory Method
 
-The Singleton Pattern is a creational design pattern that ensures a class has only one instance and provides a global point of access to that instance. It is often used when exactly one object is needed to coordinate actions across the system.
-
+The Abstract Factory Pattern is a creational design pattern that provides an interface for creating families of related or dependent objects without specifying their concrete classes. It's particularly useful when your code needs to work with multiple types of related objects, and you want to ensure that the created objects are compatible with each other.
 
 
 In this example:
 
-We create a Singleton class with a private constructor to prevent direct instantiation of the class.
+We define abstract product classes Button, Checkbox, and TextField representing GUI elements.
 
-We provide a public static member function getInstance() that returns the single instance of the Singleton class. This function uses a static variable instance to hold the single instance of the class. The instance is created the first time getInstance() is called, and subsequent calls return the same instance.
+We define an abstract factory interface GUIFactory with methods for creating these GUI elements.
 
-We also delete the copy constructor and assignment operator to prevent copying of the Singleton instance.
+Concrete product classes (WindowsButton, WindowsCheckbox, etc.) represent Windows theme GUI elements, and corresponding concrete factories (WindowsFactory) implement the GUIFactory interface for Windows theme.
 
-In the main() function, we access the Singleton instance using Singleton::getInstance().
+Similarly, there are concrete product classes (MacOSButton, MacOSCheckbox, etc.) for macOS theme and a corresponding factory (MacOSFactory).
 
-We call the showMessage() function on the Singleton instance to demonstrate its usage.
+The renderUI function accepts a factory and creates GUI elements. It demonstrates how you can render consistent GUI elements for a specific theme without worrying about their concrete implementations.
 
-The Singleton Pattern ensures that there's only one instance of the Singleton class throughout the program's lifetime. It's useful in situations where you want to maintain a single point of control or configuration, such as managing a configuration settings object or a resource manager.
+In the main function, we create GUI elements for both Windows and macOS themes and render them accordingly.
