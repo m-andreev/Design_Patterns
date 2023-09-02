@@ -1,19 +1,19 @@
-# Factory Method
+# Singleton Method
 
-The Factory Pattern is a creational design pattern that provides an interface for creating objects in a super class, but it allows subclasses to alter the type of objects that will be created. In other words, it abstracts the process of object creation and allows you to create objects without specifying the exact class of object that will be created until runtime.
-
-The Factory Pattern is particularly useful in scenarios where you want to encapsulate object creation to promote loose coupling between client code and the classes being instantiated. It's commonly used when you have a family of related classes and you want to abstract the instantiation process.
+The Singleton Pattern is a creational design pattern that ensures a class has only one instance and provides a global point of access to that instance. It is often used when exactly one object is needed to coordinate actions across the system.
 
 
 
 In this example:
 
-We define an abstract Pizza class with methods for preparing, baking, cutting, and boxing a pizza.
+We create a Singleton class with a private constructor to prevent direct instantiation of the class.
 
-We create two concrete pizza classes, CheesePizza and PepperoniPizza, which inherit from Pizza.
+We provide a public static member function getInstance() that returns the single instance of the Singleton class. This function uses a static variable instance to hold the single instance of the class. The instance is created the first time getInstance() is called, and subsequent calls return the same instance.
 
-We define an abstract PizzaFactory class with a method createPizza(). Concrete pizza factories, such as CheesePizzaFactory and PepperoniPizzaFactory, inherit from this class and implement the createPizza() method to create specific pizza types.
+We also delete the copy constructor and assignment operator to prevent copying of the Singleton instance.
 
-In the main() function, we demonstrate how the Factory Pattern works. We choose a pizza factory (in this case, CheesePizzaFactory) and use it to create a pizza object. The client code doesn't need to know the exact pizza class being created; it relies on the factory to provide the appropriate pizza type.
+In the main() function, we access the Singleton instance using Singleton::getInstance().
 
-This pattern decouples the client code from the concrete pizza classes, making it easy to add new pizza types without modifying existing code.
+We call the showMessage() function on the Singleton instance to demonstrate its usage.
+
+The Singleton Pattern ensures that there's only one instance of the Singleton class throughout the program's lifetime. It's useful in situations where you want to maintain a single point of control or configuration, such as managing a configuration settings object or a resource manager.
