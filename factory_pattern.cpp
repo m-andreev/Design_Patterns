@@ -1,3 +1,7 @@
+/*
+Just for the record, Factory Method is called "Virtual Constructor Method".
+*/
+
 #include <iostream>
 #include <string>
 
