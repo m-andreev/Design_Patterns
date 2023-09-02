@@ -1,7 +1,4 @@
-# Design_Patterns
-Design Patterns Practice
-
-Factory Method
+# Factory Method
 
 The Factory Pattern is a creational design pattern that provides an interface for creating objects in a super class, but it allows subclasses to alter the type of objects that will be created. In other words, it abstracts the process of object creation and allows you to create objects without specifying the exact class of object that will be created until runtime.
 
